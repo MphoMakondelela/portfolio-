@@ -1,0 +1,1224 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Mpho Makondelela — Computer Science graduate seeking WIL, internship and entry-level Software Development opportunities.">
+    <meta name="author" content="Mpho Makondelela">
+
+    <title>Mpho Makondelela | Software Developer Portfolio</title>
+
+    <!-- =========================================================
+         TAILWIND CSS CDN
+         ========================================================= -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- =========================================================
+         TAILWIND CUSTOM CONFIG
+         ========================================================= -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif']
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 3s ease-in-out infinite'
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- =========================================================
+         OPTIONAL FONT
+         ========================================================= -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        ::selection {
+            background: rgba(34, 211, 238, 0.25);
+            color: #67e8f9;
+        }
+
+        .glow {
+            box-shadow:
+                0 0 30px rgba(34, 211, 238, 0.08),
+                inset 0 0 30px rgba(14, 165, 233, 0.02);
+        }
+
+        .grid-bg {
+            background-image:
+                linear-gradient(rgba(148, 163, 184, 0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(148, 163, 184, 0.04) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #22d3ee, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-950 text-slate-100 antialiased">
+
+<!-- =========================================================
+     NAVIGATION
+     ========================================================= -->
+
+<header class="fixed top-0 left-0 right-0 z-50 border-b border-slate-800/70 bg-slate-950/80 backdrop-blur-xl">
+
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8"
+         aria-label="Main navigation">
+
+        <!-- Logo -->
+        <a href="#home"
+           class="text-xl font-extrabold tracking-tight"
+           aria-label="Mpho Makondelela home">
+
+            <span class="text-slate-100">&lt;</span>
+            <span class="text-cyan-400">Mpho</span>
+            <span class="text-slate-100">/&gt;</span>
+
+        </a>
+
+        <!-- Desktop navigation -->
+        <div class="hidden items-center gap-8 md:flex">
+
+            <a href="#about"
+               class="text-sm text-slate-300 transition hover:text-cyan-400">
+                About
+            </a>
+
+            <a href="#skills"
+               class="text-sm text-slate-300 transition hover:text-cyan-400">
+                Skills
+            </a>
+
+            <a href="#projects"
+               class="text-sm text-slate-300 transition hover:text-cyan-400">
+                Projects
+            </a>
+
+            <a href="#education"
+               class="text-sm text-slate-300 transition hover:text-cyan-400">
+                Education
+            </a>
+
+            <a href="#contact"
+               class="rounded-lg border border-cyan-400/40 px-4 py-2 text-sm text-cyan-400 transition hover:bg-cyan-400/10">
+                Contact
+            </a>
+
+        </div>
+
+        <!-- Mobile menu button -->
+        <button
+            id="menuButton"
+            type="button"
+            class="rounded-lg border border-slate-700 p-2 text-slate-300 md:hidden"
+            aria-label="Open navigation menu"
+            aria-expanded="false">
+
+            <svg id="menuIcon"
+                 class="h-6 w-6"
+                 fill="none"
+                 stroke="currentColor"
+                 viewBox="0 0 24 24">
+
+                <path stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M4 6h16M4 12h16M4 18h16"/>
+
+            </svg>
+        </button>
+
+    </nav>
+
+    <!-- Mobile navigation -->
+    <div id="mobileMenu"
+         class="hidden border-t border-slate-800 bg-slate-950/95 px-5 py-5 md:hidden">
+
+        <div class="flex flex-col gap-4">
+
+            <a href="#about" class="mobile-link text-slate-300 hover:text-cyan-400">
+                About
+            </a>
+
+            <a href="#skills" class="mobile-link text-slate-300 hover:text-cyan-400">
+                Skills
+            </a>
+
+            <a href="#projects" class="mobile-link text-slate-300 hover:text-cyan-400">
+                Projects
+            </a>
+
+            <a href="#education" class="mobile-link text-slate-300 hover:text-cyan-400">
+                Education
+            </a>
+
+            <a href="#contact" class="mobile-link text-cyan-400">
+                Contact
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =========================================================
+     HERO
+     ========================================================= -->
+
+<main>
+
+<section id="home"
+         class="relative flex min-h-screen items-center overflow-hidden grid-bg pt-24">
+
+    <!-- Decorative glow -->
+    <div class="absolute left-1/2 top-1/3 h-72 w-72 -translate-x-1/2 rounded-full bg-cyan-500/10 blur-3xl"></div>
+
+    <div class="relative mx-auto grid max-w-7xl gap-12 px-5 py-20 lg:grid-cols-5 lg:px-8">
+
+        <!-- Hero text -->
+        <div class="flex flex-col justify-center lg:col-span-3">
+
+            <div class="mb-6 inline-flex w-fit items-center gap-2 rounded-full border border-cyan-400/20 bg-cyan-400/5 px-4 py-2 text-sm text-cyan-300">
+
+                <span class="h-2 w-2 animate-pulse rounded-full bg-cyan-400"></span>
+
+                Open to WIL & Internship Opportunities
+
+            </div>
+
+            <p class="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-sky-400">
+                Computer Science • Software Development
+            </p>
+
+            <h1 class="max-w-4xl text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl lg:text-7xl">
+
+                Building software
+                <span class="gradient-text">that solves problems.</span>
+
+            </h1>
+
+            <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-400">
+
+                I'm <strong class="text-slate-200">Mpho Makondelela</strong>,
+                a Computer Science graduate from Tshwane University of Technology
+                seeking a <strong class="text-slate-200">WIL placement, internship,
+                or entry-level Software Development opportunity</strong>.
+
+                I work with React, Java, JavaScript, Python and mobile technologies,
+                with a particular interest in building practical, responsive
+                applications.
+
+            </p>
+
+            <!-- CTA buttons -->
+            <div class="mt-8 flex flex-col gap-4 sm:flex-row">
+
+                <a href="#projects"
+                   class="rounded-xl bg-cyan-400 px-6 py-3 text-center font-bold text-slate-950 transition hover:-translate-y-1 hover:bg-cyan-300">
+
+                    View Projects
+                </a>
+
+                <a href="#contact"
+                   class="rounded-xl border border-slate-700 bg-slate-900/70 px-6 py-3 text-center font-semibold text-slate-200 transition hover:-translate-y-1 hover:border-cyan-400/50 hover:text-cyan-400">
+
+                    Contact Me
+                </a>
+
+                <!-- =================================================
+                     CV LINK
+                     Replace "Mpho-Makondelela-CV.pdf" with the
+                     actual location/name of your CV.
+                     Example:
+                     href="assets/Mpho-Makondelela-CV.pdf"
+                     ================================================= -->
+                <a href="Mpho-Makondelela-CV.pdf"
+                   download
+                   class="rounded-xl border border-sky-400/30 bg-sky-400/5 px-6 py-3 text-center font-semibold text-sky-300 transition hover:-translate-y-1 hover:bg-sky-400/10">
+
+                    Download CV
+                </a>
+
+            </div>
+
+            <!-- Quick technologies -->
+            <div class="mt-10 flex flex-wrap gap-3">
+
+                <span class="rounded-full border border-slate-800 bg-slate-900 px-3 py-1 text-xs text-slate-400">
+                    React
+                </span>
+
+                <span class="rounded-full border border-slate-800 bg-slate-900 px-3 py-1 text-xs text-slate-400">
+                    Java
+                </span>
+
+                <span class="rounded-full border border-slate-800 bg-slate-900 px-3 py-1 text-xs text-slate-400">
+                    JavaScript
+                </span>
+
+                <span class="rounded-full border border-slate-800 bg-slate-900 px-3 py-1 text-xs text-slate-400">
+                    Python
+                </span>
+
+                <span class="rounded-full border border-slate-800 bg-slate-900 px-3 py-1 text-xs text-slate-400">
+                    React Native
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================================================
+             PROFILE PHOTO
+
+             Put your photo in the same folder as index.html.
+
+             Example:
+             /index.html
+             /profile.jpg
+
+             Then change:
+             src="profile.jpg"
+
+             to your actual image filename.
+             ========================================================= -->
+
+        <div class="flex items-center justify-center lg:col-span-2">
+
+            <div class="relative">
+
+                <!-- Decorative glow behind photo -->
+                <div class="absolute -inset-4 rounded-full bg-cyan-400/10 blur-3xl"></div>
+
+                <!-- Photo frame -->
+                <div class="relative h-72 w-72 overflow-hidden rounded-full
+                            border-4 border-cyan-400/30
+                            bg-slate-900
+                            shadow-2xl shadow-cyan-400/10
+                            sm:h-80 sm:w-80">
+
+                    <!-- =================================================
+                         YOUR PHOTO GOES HERE
+
+                         Replace "profile.jpg" with your image filename.
+
+                         Examples:
+                         src="profile.jpg"
+                         src="images/mpho.jpg"
+                         src="assets/profile.png"
+                         ================================================= -->
+
+                    <img
+                        src="mpho.jpeg"
+                        alt="Mpho Makondelela"
+                        class="h-full w-full object-cover"
+                    >
+
+                </div>
+
+                
+
+                <!-- Decorative corners -->
+                <div class="absolute -right-4 -top-4 h-16 w-16 rounded-full
+                            border border-cyan-400/20"></div>
+
+                <div class="absolute -bottom-4 -left-4 h-10 w-10 rounded-full
+                            border border-sky-400/20"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     ABOUT
+     ========================================================= -->
+
+<section id="about"
+         class="border-t border-slate-900 bg-slate-950 py-24">
+
+    <div class="mx-auto max-w-7xl px-5 lg:px-8">
+
+        <div class="mb-12 max-w-3xl">
+
+            <p class="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-cyan-400">
+                About Me
+            </p>
+
+            <h2 class="text-3xl font-bold sm:text-4xl">
+                A developer focused on learning and building.
+            </h2>
+
+        </div>
+
+        <div class="grid gap-8 lg:grid-cols-3">
+
+            <div class="rounded-2xl border border-slate-800 bg-slate-900/70 p-7 backdrop-blur-xl transition hover:-translate-y-1 hover:border-cyan-400/30">
+
+                <div class="mb-5 text-3xl">01</div>
+
+                <h3 class="mb-3 text-xl font-bold">
+                    Problem Solving
+                </h3>
+
+                <p class="leading-7 text-slate-400">
+                    I enjoy breaking down technical problems into smaller,
+                    manageable components and developing practical solutions
+                    using software engineering principles.
+                </p>
+
+            </div>
+
+            <div class="rounded-2xl border border-slate-800 bg-slate-900/70 p-7 backdrop-blur-xl transition hover:-translate-y-1 hover:border-cyan-400/30">
+
+                <div class="mb-5 text-3xl">02</div>
+
+                <h3 class="mb-3 text-xl font-bold">
+                    Engineering Mindset
+                </h3>
+
+                <p class="leading-7 text-slate-400">
+                    My focus is on writing maintainable code, understanding
+                    requirements, testing solutions and continuously improving
+                    my technical knowledge.
+                </p>
+
+            </div>
+
+            <div class="rounded-2xl border border-slate-800 bg-slate-900/70 p-7 backdrop-blur-xl transition hover:-translate-y-1 hover:border-cyan-400/30">
+
+                <div class="mb-5 text-3xl">03</div>
+
+                <h3 class="mb-3 text-xl font-bold">
+                    Ready to Contribute
+                </h3>
+
+                <p class="leading-7 text-slate-400">
+                    I am looking for a WIL or internship environment where I
+                    can contribute to real projects while learning from
+                    experienced developers and engineering teams.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     SKILLS
+     ========================================================= -->
+
+<section id="skills"
+         class="border-t border-slate-900 bg-slate-900/20 py-24">
+
+    <div class="mx-auto max-w-7xl px-5 lg:px-8">
+
+        <div class="mb-12">
+
+            <p class="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-cyan-400">
+                Technical Skills
+            </p>
+
+            <h2 class="text-3xl font-bold sm:text-4xl">
+                Technologies I work with
+            </h2>
+
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-3">
+
+            <!-- Frontend -->
+            <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-7 backdrop-blur-xl">
+
+                <h3 class="mb-6 text-xl font-bold text-cyan-400">
+                    Frontend
+                </h3>
+
+                <div class="flex flex-wrap gap-3">
+
+                    <span class="skill">React</span>
+                    <span class="skill">JavaScript</span>
+                    <span class="skill">HTML5</span>
+                    <span class="skill">CSS</span>
+
+                </div>
+
+            </div>
+
+            <!-- Backend -->
+            <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-7 backdrop-blur-xl">
+
+                <h3 class="mb-6 text-xl font-bold text-sky-400">
+                    Backend & Core
+                </h3>
+
+                <div class="flex flex-wrap gap-3">
+
+                    <span class="skill">Java</span>
+                    <span class="skill">Python</span>
+                    <span class="skill">REST APIs</span>
+                    <span class="skill">Data Structures</span>
+
+                </div>
+
+            </div>
+
+            <!-- Mobile / Tools -->
+            <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-7 backdrop-blur-xl">
+
+                <h3 class="mb-6 text-xl font-bold text-indigo-400">
+                    Mobile & Tools
+                </h3>
+
+                <div class="flex flex-wrap gap-3">
+
+                    <span class="skill">React Native</span>
+                    <span class="skill">Android Studio</span>
+                    <span class="skill">Git</span>
+                    <span class="skill">GitHub</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     PROJECTS
+     ========================================================= -->
+
+<section id="projects"
+         class="border-t border-slate-900 py-24">
+
+    <div class="mx-auto max-w-7xl px-5 lg:px-8">
+
+        <div class="mb-12">
+
+            <p class="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-cyan-400">
+                Portfolio
+            </p>
+
+            <h2 class="text-3xl font-bold sm:text-4xl">
+                Featured Projects
+            </h2>
+
+            <p class="mt-4 max-w-2xl text-slate-400">
+                A selection of projects demonstrating my experience with
+                web development, mobile development and software engineering.
+            </p>
+
+        </div>
+
+
+        <div class="grid gap-6 lg:grid-cols-3">
+
+            <!-- =================================================
+                 FEATURED PROJECT
+                 Replace # with your actual GitHub repository URL.
+                 Example:
+                 href="https://github.com/MphoMakondelela/project-name"
+                 ================================================= -->
+
+            <article class="group rounded-2xl border border-cyan-400/20 bg-slate-900/80 p-7 backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-cyan-400/50 lg:col-span-2">
+
+                <div class="mb-6 flex items-center justify-between">
+
+                    <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-cyan-400/10 text-xl text-cyan-400">
+                        &lt;/&gt;
+                    </div>
+
+                    <span class="rounded-full border border-cyan-400/20 bg-cyan-400/5 px-3 py-1 text-xs text-cyan-300">
+                        Featured Project
+                    </span>
+
+                </div>
+
+                <h3 class="text-2xl font-bold">
+                    React Web App → Android Conversion
+                </h3>
+
+                <p class="mt-4 leading-7 text-slate-400">
+
+                    Converted a React web application into a functional
+                    Android application using React Native and Android Studio.
+                    The project focused on maintaining a responsive user
+                    experience while adapting the application for a
+                    mobile environment.
+
+                </p>
+
+                <div class="mt-6 flex flex-wrap gap-2">
+
+                    <span class="tag">React</span>
+                    <span class="tag">React Native</span>
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">Android Studio</span>
+
+                </div>
+
+                <div class="mt-7 border-t border-slate-800 pt-6">
+
+                    <h4 class="mb-3 font-semibold text-slate-200">
+                        Key Outcomes
+                    </h4>
+
+                    <ul class="space-y-2 text-sm text-slate-400">
+
+                        <li>✓ Adapted a web application for mobile use.</li>
+                        <li>✓ Focused on responsive and cross-platform UI.</li>
+                        <li>✓ Worked with React Native and Android Studio.</li>
+                        <li>✓ Applied software development and debugging concepts.</li>
+
+                    </ul>
+
+                </div>
+
+                <!-- PROJECT LINK PLACEHOLDER -->
+                <a href="#"
+                   class="mt-7 inline-flex items-center gap-2 font-semibold text-cyan-400 transition hover:gap-3 hover:text-cyan-300"
+                   aria-label="View React to Android project">
+
+                    View Project
+                    <span>→</span>
+
+                </a>
+
+            </article>
+
+
+            <!-- Upcoming Web Project -->
+
+            <article class="rounded-2xl border border-slate-800 bg-slate-900/60 p-7 transition hover:-translate-y-1 hover:border-sky-400/30">
+
+                <div class="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-sky-400/10 text-xl text-sky-400">
+                    +
+                </div>
+
+                <p class="mb-2 text-xs font-semibold uppercase tracking-wider text-sky-400">
+                    Coming Soon
+                </p>
+
+                <h3 class="text-xl font-bold">
+                    Upcoming Web Project
+                </h3>
+
+                <p class="mt-4 text-sm leading-7 text-slate-400">
+
+                    A future web application demonstrating modern frontend
+                    development, responsive design, API integration and
+                    reusable components.
+
+                </p>
+
+                <div class="mt-6 flex flex-wrap gap-2">
+
+                    <span class="tag">React</span>
+                    <span class="tag">REST API</span>
+                    <span class="tag">Responsive UI</span>
+
+                </div>
+
+            </article>
+
+
+            <!-- Future Full Stack Project -->
+
+            <article class="rounded-2xl border border-slate-800 bg-slate-900/60 p-7 transition hover:-translate-y-1 hover:border-indigo-400/30 lg:col-span-1">
+
+                <div class="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-400/10 text-xl text-indigo-400">
+                    #
+                </div>
+
+                <p class="mb-2 text-xs font-semibold uppercase tracking-wider text-indigo-400">
+                    Planned
+                </p>
+
+                <h3 class="text-xl font-bold">
+                    Future Full-Stack Project
+                </h3>
+
+                <p class="mt-4 text-sm leading-7 text-slate-400">
+
+                    A future full-stack application designed to demonstrate
+                    frontend development, backend logic, database concepts,
+                    APIs and authentication.
+
+                </p>
+
+                <div class="mt-6 flex flex-wrap gap-2">
+
+                    <span class="tag">React</span>
+                    <span class="tag">Java/Python</span>
+                    <span class="tag">API</span>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     EDUCATION & CERTIFICATIONS
+     ========================================================= -->
+
+<section id="education"
+         class="border-t border-slate-900 bg-slate-900/20 py-24">
+
+    <div class="mx-auto max-w-7xl px-5 lg:px-8">
+
+        <div class="mb-12">
+
+            <p class="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-cyan-400">
+                Education
+            </p>
+
+            <h2 class="text-3xl font-bold sm:text-4xl">
+                Education & Certifications
+            </h2>
+
+        </div>
+
+
+        <div class="grid gap-10 lg:grid-cols-2">
+
+            <!-- Timeline -->
+            <div>
+
+                <div class="relative border-l border-slate-700 pl-8">
+
+                    <div class="relative">
+
+                        <span class="absolute -left-[41px] top-1 h-5 w-5 rounded-full border-4 border-slate-950 bg-cyan-400"></span>
+
+                        <p class="text-sm font-semibold text-cyan-400">
+                            Tshwane University of Technology
+                        </p>
+
+                        <h3 class="mt-2 text-2xl font-bold">
+                            Diploma in Computer Science
+                        </h3>
+
+                        <p class="mt-3 leading-7 text-slate-400">
+
+                            Academic foundation in computer science,
+                            software development, programming, data structures,
+                            software engineering and related technologies.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Certifications -->
+            <div>
+
+                <h3 class="mb-6 text-xl font-bold">
+                    Certifications & Courses
+                </h3>
+
+                <div class="grid gap-4 sm:grid-cols-2">
+
+                    <div class="rounded-xl border border-slate-800 bg-slate-900 p-5">
+                        <p class="font-semibold text-cyan-400">
+                            Java OOP
+                        </p>
+                        <p class="mt-2 text-sm text-slate-500">
+                            Object-Oriented Programming
+                        </p>
+                    </div>
+
+                    <div class="rounded-xl border border-slate-800 bg-slate-900 p-5">
+                        <p class="font-semibold text-sky-400">
+                            Python Programming
+                        </p>
+                        <p class="mt-2 text-sm text-slate-500">
+                            Python development fundamentals
+                        </p>
+                    </div>
+
+                    <div class="rounded-xl border border-slate-800 bg-slate-900 p-5">
+                        <p class="font-semibold text-indigo-400">
+                            Data Science
+                        </p>
+                        <p class="mt-2 text-sm text-slate-500">
+                            Data science fundamentals
+                        </p>
+                    </div>
+
+                    <div class="rounded-xl border border-slate-800 bg-slate-900 p-5">
+                        <p class="font-semibold text-cyan-400">
+                            Java Crash Course
+                        </p>
+                        <p class="mt-2 text-sm text-slate-500">
+                            Java programming fundamentals
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     CONTACT
+     ========================================================= -->
+
+<section id="contact"
+         class="border-t border-slate-900 py-24">
+
+    <div class="mx-auto max-w-7xl px-5 lg:px-8">
+
+        <div class="mb-12 max-w-3xl">
+
+            <p class="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-cyan-400">
+                Get In Touch
+            </p>
+
+            <h2 class="text-3xl font-bold sm:text-4xl">
+                Let's connect.
+            </h2>
+
+            <p class="mt-4 leading-7 text-slate-400">
+
+                If you're looking for a motivated Computer Science graduate
+                for a WIL placement, internship or entry-level development
+                opportunity, I'd be happy to connect.
+
+            </p>
+
+        </div>
+
+
+        <div class="grid gap-8 lg:grid-cols-2">
+
+            <!-- Contact information -->
+            <div class="space-y-4">
+
+                <!-- Email -->
+                <a href="mailto:mmakondelela94@gmail.com"
+                   class="flex items-center gap-5 rounded-2xl border border-slate-800 bg-slate-900/70 p-5 transition hover:border-cyan-400/40">
+
+                    <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-cyan-400/10 text-cyan-400">
+                        @
+                    </div>
+
+                    <div>
+                        <p class="text-sm text-slate-500">
+                            Email
+                        </p>
+
+                        <p class="mt-1 font-semibold text-slate-200">
+                            mmakondelela94@gmail.com
+                        </p>
+                    </div>
+
+                </a>
+
+
+                <!-- GitHub -->
+                <a href="https://github.com/MphoMakondelela"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="flex items-center gap-5 rounded-2xl border border-slate-800 bg-slate-900/70 p-5 transition hover:border-cyan-400/40">
+
+                    <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-sky-400/10 text-sky-400">
+                        GH
+                    </div>
+
+                    <div>
+                        <p class="text-sm text-slate-500">
+                            GitHub
+                        </p>
+
+                        <p class="mt-1 font-semibold text-slate-200">
+                            github.com/MphoMakondelela
+                        </p>
+                    </div>
+
+                </a>
+
+
+                <!-- Location -->
+                <div class="flex items-center gap-5 rounded-2xl border border-slate-800 bg-slate-900/70 p-5">
+
+                    <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-400/10 text-indigo-400">
+                        SA
+                    </div>
+
+                    <div>
+                        <p class="text-sm text-slate-500">
+                            Location
+                        </p>
+
+                        <p class="mt-1 font-semibold text-slate-200">
+                            Tshwane, Gauteng, South Africa
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Contact form -->
+            <div class="rounded-2xl border border-slate-800 bg-slate-900/70 p-6 backdrop-blur-xl sm:p-8">
+
+                <!--
+                    IMPORTANT:
+                    This form is frontend-only.
+
+                    To actually receive messages, connect it to a
+                    backend/service such as Formspree, Netlify Forms,
+                    EmailJS, or your own API.
+
+                    Example:
+                    <form action="YOUR_FORM_ENDPOINT" method="POST">
+                -->
+
+                <form id="contactForm">
+
+                    <div class="grid gap-5 sm:grid-cols-2">
+
+                        <div>
+
+                            <label for="name"
+                                   class="mb-2 block text-sm font-medium text-slate-300">
+                                Name
+                            </label>
+
+                            <input
+                                id="name"
+                                name="name"
+                                type="text"
+                                required
+                                autocomplete="name"
+                                class="w-full rounded-xl border border-slate-700 bg-slate-950 px-4 py-3 text-slate-100 outline-none transition placeholder:text-slate-600 focus:border-cyan-400"
+                                placeholder="Your name">
+
+                        </div>
+
+
+                        <div>
+
+                            <label for="email"
+                                   class="mb-2 block text-sm font-medium text-slate-300">
+                                Email
+                            </label>
+
+                            <input
+                                id="email"
+                                name="email"
+                                type="email"
+                                required
+                                autocomplete="email"
+                                class="w-full rounded-xl border border-slate-700 bg-slate-950 px-4 py-3 text-slate-100 outline-none transition placeholder:text-slate-600 focus:border-cyan-400"
+                                placeholder="you@example.com">
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="mt-5">
+
+                        <label for="message"
+                               class="mb-2 block text-sm font-medium text-slate-300">
+                            Message
+                        </label>
+
+                        <textarea
+                            id="message"
+                            name="message"
+                            rows="6"
+                            required
+                            class="w-full resize-none rounded-xl border border-slate-700 bg-slate-950 px-4 py-3 text-slate-100 outline-none transition placeholder:text-slate-600 focus:border-cyan-400"
+                            placeholder="Tell me about the opportunity..."></textarea>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="mt-5 w-full rounded-xl bg-cyan-400 px-6 py-3 font-bold text-slate-950 transition hover:bg-cyan-300">
+
+                        Send Message
+
+                    </button>
+
+
+                    <p id="formMessage"
+                       class="mt-4 hidden text-center text-sm text-cyan-400">
+                    </p>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+
+<footer class="border-t border-slate-900 bg-slate-950">
+
+    <div class="mx-auto max-w-7xl px-5 py-10 lg:px-8">
+
+        <div class="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
+
+            <div>
+
+                <a href="#home"
+                   class="text-xl font-extrabold">
+
+                    <span class="text-slate-100">&lt;</span>
+                    <span class="text-cyan-400">Mpho</span>
+                    <span class="text-slate-100">/&gt;</span>
+
+                </a>
+
+                <p class="mt-3 text-sm text-slate-500">
+                    Software Developer • Computer Science
+                </p>
+
+            </div>
+
+
+            <div class="flex flex-wrap gap-5 text-sm">
+
+                <a href="#home"
+                   class="text-slate-400 transition hover:text-cyan-400">
+                    Home
+                </a>
+
+                <a href="#about"
+                   class="text-slate-400 transition hover:text-cyan-400">
+                    About
+                </a>
+
+                <a href="#projects"
+                   class="text-slate-400 transition hover:text-cyan-400">
+                    Projects
+                </a>
+
+                <a href="#contact"
+                   class="text-slate-400 transition hover:text-cyan-400">
+                    Contact
+                </a>
+
+                <a href="https://github.com/MphoMakondelela"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="text-slate-400 transition hover:text-cyan-400">
+                    GitHub
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="mt-8 border-t border-slate-900 pt-6">
+
+            <p class="text-center text-xs text-slate-600">
+
+                © <span id="currentYear"></span>
+                Mpho Makondelela. All rights reserved.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+     ========================================================= -->
+
+<script>
+
+    /*
+     * ==========================================================
+     * MOBILE NAVIGATION
+     * ==========================================================
+     */
+
+    const menuButton = document.getElementById('menuButton');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    menuButton.addEventListener('click', () => {
+
+        const isOpen = !mobileMenu.classList.contains('hidden');
+
+        mobileMenu.classList.toggle('hidden');
+
+        menuButton.setAttribute('aria-expanded', String(!isOpen));
+
+    });
+
+
+    /*
+     * Close mobile menu after selecting a section.
+     */
+
+    document.querySelectorAll('.mobile-link').forEach(link => {
+
+        link.addEventListener('click', () => {
+
+            mobileMenu.classList.add('hidden');
+
+            menuButton.setAttribute('aria-expanded', 'false');
+
+        });
+
+    });
+
+
+    /*
+     * ==========================================================
+     * FOOTER YEAR
+     * ==========================================================
+     */
+
+    document.getElementById('currentYear').textContent =
+        new Date().getFullYear();
+
+
+    /*
+     * ==========================================================
+     * CONTACT FORM
+     * ==========================================================
+     *
+     * This currently displays a confirmation message.
+     *
+     * To make the form actually send emails:
+     *
+     * 1. Create a Formspree/EmailJS/etc. endpoint.
+     * 2. Replace the submit handler below.
+     * 3. Or add an action attribute to the form.
+     */
+
+    const contactForm = document.getElementById('contactForm');
+    const formMessage = document.getElementById('formMessage');
+
+    contactForm.addEventListener('submit', function(event) {
+
+        event.preventDefault();
+
+        formMessage.textContent =
+            'Thanks! Your message has been prepared. Connect this form to a form service to receive submissions.';
+
+        formMessage.classList.remove('hidden');
+
+        contactForm.reset();
+
+    });
+
+
+    /*
+     * ==========================================================
+     * SKILL / TAG STYLES
+     * ==========================================================
+     *
+     * Tailwind cannot process dynamically generated classes
+     * when using the CDN configuration, so we add these styles
+     * directly to the elements.
+     */
+
+    document.querySelectorAll('.skill').forEach(element => {
+
+        element.className +=
+            ' rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-300';
+
+    });
+
+
+    document.querySelectorAll('.tag').forEach(element => {
+
+        element.className +=
+            ' rounded-full border border-slate-700 bg-slate-950 px-3 py-1 text-xs text-slate-400';
+
+    });
+
+</script>
+
+</body>
+</html>
+
+```
